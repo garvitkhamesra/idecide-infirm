@@ -190,7 +190,7 @@ $("#mytags").tagit({
 <br><br><br>
 
 			<ul id="mytags" >
-<li ></li>
+<li >Diagnosis</li>
 </ul>
 		<br><br><br>
 		<input type="text" name="medice" placeholder="Name of Medicine" required>
