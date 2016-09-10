@@ -98,21 +98,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--horatio">
 						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item "><a href="doctor.php" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="doctor.php" class="menu__link">Home</a></li>
 							<li class="menu__item"><a href="about.php" class="menu__link">About</a></li> 
-							<li class="menu__item menu__item--current"><a href="prescription.php" class="menu__link">Prescription</a></li> 
+							<li class="menu__item  menu__item--current"><a href="prescription.php" class="menu__link">Prescription</a></li> 
 							<li class="menu__item"><a href="table.php" class="menu__link">Laboratory Requisition</a></li> 
 							<li class="menu__item"><a href="ultrasonography.php" class="menu__link">Ultrasonograohy</a></li>
 							<li class="menu__item"><a href="radiology.php" class="menu__link">Radiology</a></li>
-							<li class="menu__item"><a href="contact.html" class="menu__link">Contact</a></li>
+							<li class="menu__item"><a href="contact.php" class="menu__link">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
 			</nav>
 		</div>
 	</div>
-
-
 
 <!-- Form -->
 
@@ -138,94 +136,27 @@ function addEducation(divName){
      }
 }
     </script>
- <script>
-        $(function(){
-            var sampleTags = ['c++', 'java', 'php', 'coldfusion', 'javascript', 'asp', 'ruby', 'python', 'c', 'scala', 'groovy', 'haskell', 'perl', 'erlang', 'apl', 'cobol', 'go', 'lua'];
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+<link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
 
-            // singleFieldTags2 is an INPUT element, rather than a UL as in the other 
-            // examples, so it automatically defaults to singleField.
-            $('#singleFieldTags2').tagit({
-                availableTags: sampleTags
-            });
-
-            //-------------------------------
-            // Preloading data in markup
-            //-------------------------------
-            $('#myULTags').tagit({
-                availableTags: sampleTags, // this param is of course optional. it's for autocomplete.
-                // configure the name of the input field (will be submitted with form), default: item[tags]
-                itemName: 'item',
-                fieldName: 'tags'
-            });
-
-            //-------------------------------
-            // Tag events
-            //-------------------------------
-            var eventTags = $('#eventTags');
-
-            var addEvent = function(text) {
-                $('#events_container').append(text + '<br>');
-            };
-
-            eventTags.tagit({
-                availableTags: sampleTags,
-                beforeTagAdded: function(evt, ui) {
-                    if (!ui.duringInitialization) {
-                        addEvent('beforeTagAdded: ' + eventTags.tagit('tagLabel', ui.tag));
-                    }
-                },
-                afterTagAdded: function(evt, ui) {
-                    if (!ui.duringInitialization) {
-                        addEvent('afterTagAdded: ' + eventTags.tagit('tagLabel', ui.tag));
-                    }
-                },
-                beforeTagRemoved: function(evt, ui) {
-                    addEvent('beforeTagRemoved: ' + eventTags.tagit('tagLabel', ui.tag));
-                },
-                afterTagRemoved: function(evt, ui) {
-                    addEvent('afterTagRemoved: ' + eventTags.tagit('tagLabel', ui.tag));
-                },
-                onTagClicked: function(evt, ui) {
-                    addEvent('onTagClicked: ' + eventTags.tagit('tagLabel', ui.tag));
-                },
-                onTagExists: function(evt, ui) {
-                    addEvent('onTagExists: ' + eventTags.tagit('tagLabel', ui.existingTag));
-                }
-            });
-
-            //-------------------------------
-            // Read-only
-            //-------------------------------
-            $('#readOnlyTags').tagit({
-                readOnly: true
-            });
-
-            //-------------------------------
-            // Tag-it methods
-            //-------------------------------
-            $('#methodTags').tagit({
-                availableTags: sampleTags
-            });
-
-            //-------------------------------
-            // Allow spaces without quotes.
-            //-------------------------------
-            $('#allowSpacesTags').tagit({
-                availableTags: sampleTags,
-                allowSpaces: true
-            });
-
-            //-------------------------------
-            // Remove confirmation
-            //-------------------------------
-            $('#removeConfirmationTags').tagit({
-                availableTags: sampleTags,
-                removeConfirmation: true
-            });
-            
-        });
-    </script>
-
+<script type="text/javascript">
+$(document).ready(function() {
+$("#mytags").tagit({
+  tagSource: function(search, showChoices) {
+    $.ajax({
+      url: "auto2.php",
+      data: {search: search.term},
+      success: function(choices) {
+        showChoices(choices);
+      }
+    });
+  }
+});
+});
+</script>
 
 
 
@@ -258,8 +189,9 @@ function addEducation(divName){
 			
 <br><br><br>
 
-			Diagnosis
-			<input name="tags" id="singleFieldTags2" value="Viral,Cough">
+			<ul id="mytags" >
+<li ></li>
+</ul>
 		<br><br><br>
 		<input type="text" name="medice" placeholder="Name of Medicine" required>
 		<br><br><br>

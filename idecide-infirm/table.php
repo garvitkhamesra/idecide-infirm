@@ -95,14 +95,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+               
+<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                     <nav class="menu menu--horatio">
                         <ul class="nav navbar-nav menu__list">
-                            <li class="menu__item menu__item--current"><a href="index.html" class="menu__link">Home</a></li>
-                            <li class="menu__item"><a href="about.html" class="menu__link">About</a></li> 
-                            <li class="menu__item"><a href="codes.html" class="menu__link">Short Codes</a></li> 
-                            <li class="menu__item"><a href="gallery.html" class="menu__link">Gallery</a></li> 
-                            <li class="menu__item"><a href="contact.html" class="menu__link">Contact</a></li>
+                            <li class="menu__item"><a href="doctor.php" class="menu__link">Home</a></li>
+                            <li class="menu__item"><a href="about.php" class="menu__link">About</a></li> 
+                            <li class="menu__item"><a href="prescription.php" class="menu__link">Prescription</a></li> 
+                            <li class="menu__item  menu__item--current"><a href="table.php" class="menu__link">Laboratory Requisition</a></li> 
+                            <li class="menu__item"><a href="ultrasonography.php" class="menu__link">Ultrasonograohy</a></li>
+                            <li class="menu__item"><a href="radiology.php" class="menu__link">Radiology</a></li>
+                            <li class="menu__item"><a href="contact.php" class="menu__link">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -111,127 +114,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 
 
-
 <!-- FORM -->
 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+<link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
 
+<script type="text/javascript">
+$(document).ready(function() {
+$("#mytags").tagit({
+  tagSource: function(search, showChoices) {
+    $.ajax({
+      url: "auto2.php",
+      data: {search: search.term},
+      success: function(choices) {
+        showChoices(choices);
+      }
+    });
+  }
+});
+});
+</script>
+<p align="center">
 
- <script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/ajax2.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
-   
- <script>
-        $(function(){
-            var sampleTags = ['Complete Haemogram', 'Haemoglobin', 'Total EBC Count', 'Differential Count', 'ESR', 'Packed Cell Count', 'Peripheral Blood Smear ', 'RBC Count', 'Platelet Count', 'Bleeding Time', 'Clotting Time', 'APTT', 'Malaria Parasite',
-            'Microfilaria ', 'D Testing', 'Direct Coomb’s Test', 'X Matching', 'L E Cekls','Donor Screening','Eosinophil Count','Absolute Nutrophil Count','Sickle Cells Test','Osmotic Fragility Test',
-            'Lipase', 'Urea', 'Creatine', 'Uric Acid', 'Amylase', 'LDH', 'CPK', 'CKMB', 'Calcium', 'Phosphorus', 'Iron', 'Magnesium', 'Liver Function Test','Total Bilurubin','Direct Bilurubin','Protein-Albumin / Globulin','SGPT','SGOT','Alkaline Phosphatase','Lipid Profile',
-            'Total Cholesterol', 'Triglycerides', 'HDL Cholesterol', 'LDL Cholesterol', 'Acid Phosphatase','Prostatic Fraction ','Lithium','Electrolytes','Sodium (Na+) ','Potassium (K+) ','Chloride (CI2)','Bicarbonate (HCo3)','Glycosilated Hb',
-            'Fasting Blood Sugar', 'PP Blood Sugar', 'Random Blood Sugar', 'Blood Sugar with Glucometer', 'G .T. T', 'G .C. T', 'G .G .T', 'U.I.B.C', 'T.I.B.C', 'S NH 3', 'C3', 'C4'
-            ];
+<br><br><br><br><br><br><br>
+<ul style ="margin-left:10%;margin-right:10%" id="mytags">
+<li>Diagnosis</li>
+</ul>
 
-            // singleFieldTags2 is an INPUT element, rather than a UL as in the other 
-            // examples, so it automatically defaults to singleField.
-            $('#singleFieldTags2').tagit({
-                availableTags: sampleTags
-            });
-
-            //-------------------------------
-            // Preloading data in markup
-            //-------------------------------
-            $('#myULTags').tagit({
-                availableTags: sampleTags, // this param is of course optional. it's for autocomplete.
-                // configure the name of the input field (will be submitted with form), default: item[tags]
-                itemName: 'item',
-                fieldName: 'tags'
-            });
-
-            //-------------------------------
-            // Tag events
-            //-------------------------------
-            var eventTags = $('#eventTags');
-
-            var addEvent = function(text) {
-                $('#events_container').append(text + '<br>');
-            };
-
-            eventTags.tagit({
-                availableTags: sampleTags,
-                beforeTagAdded: function(evt, ui) {
-                    if (!ui.duringInitialization) {
-                        addEvent('beforeTagAdded: ' + eventTags.tagit('tagLabel', ui.tag));
-                    }
-                },
-                afterTagAdded: function(evt, ui) {
-                    if (!ui.duringInitialization) {
-                        addEvent('afterTagAdded: ' + eventTags.tagit('tagLabel', ui.tag));
-                    }
-                },
-                beforeTagRemoved: function(evt, ui) {
-                    addEvent('beforeTagRemoved: ' + eventTags.tagit('tagLabel', ui.tag));
-                },
-                afterTagRemoved: function(evt, ui) {
-                    addEvent('afterTagRemoved: ' + eventTags.tagit('tagLabel', ui.tag));
-                },
-                onTagClicked: function(evt, ui) {
-                    addEvent('onTagClicked: ' + eventTags.tagit('tagLabel', ui.tag));
-                },
-                onTagExists: function(evt, ui) {
-                    addEvent('onTagExists: ' + eventTags.tagit('tagLabel', ui.existingTag));
-                }
-            });
-
-            //-------------------------------
-            // Read-only
-            //-------------------------------
-            $('#readOnlyTags').tagit({
-                readOnly: true
-            });
-
-            //-------------------------------
-            // Tag-it methods
-            //-------------------------------
-            $('#methodTags').tagit({
-                availableTags: sampleTags
-            });
-
-            //-------------------------------
-            // Allow spaces without quotes.
-            //-------------------------------
-            $('#allowSpacesTags').tagit({
-                availableTags: sampleTags,
-                allowSpaces: true
-            });
-
-            //-------------------------------
-            // Remove confirmation
-            //-------------------------------
-            $('#removeConfirmationTags').tagit({
-                availableTags: sampleTags,
-                removeConfirmation: true
-            });
-            
-        });
-    </script>
-
-<div align="center" >
-<br><br><br>
-            <h3>Laboratory Requisition Form</h3>
-
-<br><br><br>
-
-<h4>Tests :<h4><br>
-<input name="tags" id="singleFieldTags2" value="">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div>
-
-
-
-
-
+<br><br><br><br><br><br><br>
 
 <!-- Form -->
-
+</p>
 
 
 

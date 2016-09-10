@@ -98,13 +98,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--horatio">
 						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item menu__item--current"><a href="index.html" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="about.html" class="menu__link">About</a></li> 
+							<li class="menu__item menu__item--current"><a href="doctor.php" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="about.php" class="menu__link">About</a></li> 
 							<li class="menu__item"><a href="prescription.php" class="menu__link">Prescription</a></li> 
 							<li class="menu__item"><a href="table.php" class="menu__link">Laboratory Requisition</a></li> 
 							<li class="menu__item"><a href="ultrasonography.php" class="menu__link">Ultrasonograohy</a></li>
 							<li class="menu__item"><a href="radiology.php" class="menu__link">Radiology</a></li>
-							<li class="menu__item"><a href="contact.html" class="menu__link">Contact</a></li>
+							<li class="menu__item"><a href="contact.php" class="menu__link">Contact</a></li>
 						</ul>
 					</nav>
 				</div>

@@ -1,5 +1,5 @@
 
--->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,24 +112,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  </button>
 					<div class="logo grid">
 						<div class="grid__item color-3">
-							<h1><a class="link link--nukun" href="index.html"><i></i>INFI<span>R</span>MARY</a></h1>
+							<h1><a class="link link--nukun" href="index.html"><i></i>I<span>D</span>ecide</a></h1>
 						</div>
 					</div>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse nav-wil links" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--horatio">
 						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item "><a href="index.html" class="menu__link">Home</a></li>
-							<li class="menu__item menu__item--current"><a href="about.html" class="menu__link">About</a></li> 
-							<li class="menu__item"><a href="codes.html" class="menu__link">Short Codes</a></li> 
-							<li class="menu__item"><a href="gallery.html" class="menu__link">Gallery</a></li> 
-							<li class="menu__item "><a href="contact.html" class="menu__link">Contact</a></li>
+							<li class="menu__item"><a href="doctor.php" class="menu__link">Home</a></li>
+							<li class="menu__item 
+ menu__item--current"><a href="about.php" class="menu__link">About</a></li> 
+							<li class="menu__item"><a href="prescription.php" class="menu__link">Prescription</a></li> 
+							<li class="menu__item"><a href="table.php" class="menu__link">Laboratory Requisition</a></li> 
+							<li class="menu__item"><a href="ultrasonography.php" class="menu__link">Ultrasonograohy</a></li>
+							<li class="menu__item"><a href="radiology.php" class="menu__link">Radiology</a></li>
+							<li class="menu__item"><a href="contact.php" class="menu__link">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
-				<!-- /.navbar-collapse -->
 			</nav>
 		</div>
 	</div>

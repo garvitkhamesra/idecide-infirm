@@ -38,7 +38,7 @@ if($result){
 
 }
 	else{
-
+		
 		header ("LOCATION:loginindex.php");
 	}
 

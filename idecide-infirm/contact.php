@@ -56,26 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info@example.com</a></li>
 			</ul>
 		</div>
-		<div class="header_right">
-			<div class="login">
-				<ul>
-					<li><a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Login</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Signup</a></li>
-					<li>
-						<div class="search-bar">
-							<div class="search">		
-								<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a>
-							</div>
-							<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-								<div id="small-dialog" class="mfp-hide">
-									<div class="search-top">
-										<div class="login_pop">
-											<form action="#" method="post">
-												<input type="submit" value="">
-												<input type="text" name="Type something..." value="Type something..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-											</form>
-										</div>				
-									</div>
+		
 									<script>
 												$(document).ready(function() {
 												$('.popup-with-zoom-anim').magnificPopup({
@@ -116,27 +97,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  </button>
 					<div class="logo grid">
 						<div class="grid__item color-3">
-							<h1><a class="link link--nukun" href="index.html"><i></i>INFI<span>R</span>MARY</a></h1>
+							<h1><a class="link link--nukun" href="index.html"><i></i>I<span>D</span>ecide</a></h1>
 						</div>
 					</div>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse nav-wil links" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--horatio">
 						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item "><a href="index.html" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="about.html" class="menu__link">About</a></li> 
-							<li class="menu__item"><a href="codes.html" class="menu__link">Short Codes</a></li> 
-							<li class="menu__item"><a href="gallery.html" class="menu__link">Gallery</a></li> 
-							<li class="menu__item menu__item--current"><a href="contact.html" class="menu__link">Contact</a></li>
+							<li class="menu__item "><a href="doctor.php" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="about.php" class="menu__link">About</a></li> 
+							<li class="menu__item "><a href="prescription.php" class="menu__link">Prescription</a></li> 
+							<li class="menu__item"><a href="table.php" class="menu__link">Laboratory Requisition</a></li> 
+							<li class="menu__item"><a href="ultrasonography.php" class="menu__link">Ultrasonograohy</a></li>
+							<li class="menu__item"><a href="radiology.php" class="menu__link">Radiology</a></li>
+							<li class="menu__item menu__item--current"><a href="contact.php" class="menu__link">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
-				<!-- /.navbar-collapse -->
 			</nav>
 		</div>
 	</div>
+
 
 <!-- banner -->
 <div class="banner page_head">
