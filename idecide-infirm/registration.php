@@ -1,9 +1,10 @@
 <?php 
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "doctor";
+$dbHost = 'localhost';
+    $dbUsername = 'garvit';
+    $dbPassword = 'hellogarvit';
+    $dbName = 'garvit';
+    
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
